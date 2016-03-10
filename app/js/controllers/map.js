@@ -14,9 +14,9 @@ myApp.controller('MapController', ['$scope', '$http', '$location', '$firebaseObj
 	      mapTypeId: google.maps.MapTypeId.ROADMAP
 	    });
 
-	    var infowindow = new google.maps.InfoWindow();
-
 	    var marker, i;
+
+	    var infowindow = [];
 
 	    for (i = 0; i < $scope.maps.length; i++) {  
 	      marker = new google.maps.Marker({
@@ -30,11 +30,14 @@ myApp.controller('MapController', ['$scope', '$http', '$location', '$firebaseObj
 				      '<h4 id="firstHeading" class="firstHeading">' + $scope.maps[i].firstname + " " + $scope.maps[i].lastname + '</h4>'+
 				      '<a class="text-center" href="#/contact/' + $scope.maps[i].$id + '">View More</a>' +
 				      '</div>';
-		  console.log(contentString);
+
+		   infowindow[i] = new google.maps.InfoWindow({
+			    content: contentString
+			});	      
+
 	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	        return function() {
-	          infowindow.setContent(contentString);
-	          infowindow.open(map, marker);
+	          infowindow[i].open(map, marker);
 	        }
 	      })(marker, i));
 	    };
