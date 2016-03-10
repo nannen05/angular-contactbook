@@ -1,37 +1,43 @@
 myApp.controller('MapController', ['$scope', '$http', '$location', '$firebaseObject', '$routeParams', '$firebaseArray', 'FIREBASE_URL',
 	function($scope, $http, $location, $firebaseObject, $routeParams, $firebaseArray, FIREBASE_URL){
 
-	 var locations = [
-      ['Bondi Beach', -33.890542, 151.274856, 4],
-      ['Coogee Beach', -33.923036, 151.259052, 5],
-      ['Cronulla Beach', -34.028249, 151.157507, 3],
-      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-      ['Maroubra Beach', -33.950198, 151.259302, 1]
-    ];
+	var ref = new Firebase(FIREBASE_URL + '/contacts');
+	var mapList = $firebaseArray(ref);
+	console.log(mapList)
+	$scope.maps = mapList;
 
-    var map = new google.maps.Map(document.getElementById('allMap'), {
-      zoom: 10,
-      center: new google.maps.LatLng(-33.92, 151.25),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+	$scope.maps.$loaded().then(function() {
 
-    var infowindow = new google.maps.InfoWindow();
+	    var map = new google.maps.Map(document.getElementById('allMap'), {
+	      zoom: 10,
+	      center: new google.maps.LatLng($scope.maps[0].latitude, $scope.maps[0].longitude),
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    });
 
-    var marker, i;
+	    var infowindow = new google.maps.InfoWindow();
 
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
+	    var marker, i;
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
+	    for (i = 0; i < $scope.maps.length; i++) {  
+	      marker = new google.maps.Marker({
+	        position: new google.maps.LatLng($scope.maps[i].latitude, $scope.maps[i].longitude),
+	        map: map
+	      });
 
+	      var contentString = '<div id="content">'+
+				      '<div id="siteNotice">'+
+				      '</div>'+
+				      '<h4 id="firstHeading" class="firstHeading">' + $scope.maps[i].firstname + " " + $scope.maps[i].lastname + '</h4>'+
+				      '<a class="text-center" href="#/contact/' + $scope.maps[i].$id + '">View More</a>' +
+				      '</div>';
+		  console.log(contentString);
+	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	        return function() {
+	          infowindow.setContent(contentString);
+	          infowindow.open(map, marker);
+	        }
+	      })(marker, i));
+	    };
+	});    
 
 }]);
