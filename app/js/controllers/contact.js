@@ -25,10 +25,25 @@ myApp.controller('ContactController', ['$scope', '$http', '$location', '$firebas
 
 			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+			var contentString = '<div id="content">'+
+				      '<div id="siteNotice">'+
+				      '</div>'+
+				      '<h4 id="firstHeading" class="firstHeading">' + $scope.contact.firstname + '</h4>'+
+				      '</div>';
+
+			var infowindow = new google.maps.InfoWindow({
+			    content: contentString
+			  });
+
 			var marker = new google.maps.Marker({
 			    position: myLatlng,
+			    map: map,
 			    title:"Hello World!"
 			});
+
+			marker.addListener('click', function() {
+			    infowindow.open(map, marker);
+			  });
 
 			marker.setMap(map);
 		};

@@ -16,8 +16,10 @@ myApp.config(['$routeProvider', function($routeProvider){
 			templateUrl: 'views/single-contact.html',
 			controller: 'ContactController'
 		})
-		
-
+		.when('/map' , {
+			templateUrl: 'views/map.html',
+			controller: 'MapController'
+		})
 }]);
 
 myApp.directive('googleplace', function() {
