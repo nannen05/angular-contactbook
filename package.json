@@ -1,0 +1,16 @@
+{
+  "name": "contactbook",
+  "version": "1.0.0",
+  "description": "A contact book using firebase, angular and google api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "wiredep": "^3.0.0"
+  }
+}
