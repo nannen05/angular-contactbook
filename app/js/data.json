@@ -3,8 +3,17 @@
 	"name": "Nick",
 	"street": "13075 Wickshire Lane",
 	"city": "Tustin",
-	"State": "Californina",
-	"Zip": 92782,
+	"state": "Californina",
+	"zip": 92782,
+	"phone-number": "Hello"
+},
+{
+	"description": "Sed eget ornare elit, non hendrerit mi. Duis lorem mauris, bibendum vel pellentesque sed, volutpat ac odio. Vivamus ornare tincidunt dolor, at congue augue ornare commodo. Sed sagittis neque ac.",
+	"name": "Nick",
+	"street": "13075 Wickshire Lane",
+	"city": "Tustin",
+	"state": "Californina",
+	"zip": 92782,
 	"phone-number": "714-743-1528"
 },
 {
@@ -12,8 +21,8 @@
 	"name": "Nick",
 	"street": "13075 Wickshire Lane",
 	"city": "Tustin",
-	"State": "Californina",
-	"Zip": 92782,
+	"state": "Californina",
+	"zip": 92782,
 	"phone-number": "714-743-1528"
 },
 {
@@ -21,8 +30,8 @@
 	"name": "Nick",
 	"street": "13075 Wickshire Lane",
 	"city": "Tustin",
-	"State": "Californina",
-	"Zip": 92782,
+	"state": "Californina",
+	"zip": 92782,
 	"phone-number": "714-743-1528"
 },
 {
@@ -30,8 +39,8 @@
 	"name": "Nick",
 	"street": "13075 Wickshire Lane",
 	"city": "Tustin",
-	"State": "Californina",
-	"Zip": 92782,
+	"state": "Californina",
+	"zip": 92782,
 	"phone-number": "714-743-1528"
 },
 {
@@ -39,7 +48,25 @@
 	"name": "Nick",
 	"street": "13075 Wickshire Lane",
 	"city": "Tustin",
-	"State": "Californina",
-	"Zip": 92782,
+	"state": "Californina",
+	"zip": 92782,
+	"phone-number": "714-743-1528"
+},
+{
+	"description": "Sed eget ornare elit, non hendrerit mi. Duis lorem mauris, bibendum vel pellentesque sed, volutpat ac odio. Vivamus ornare tincidunt dolor, at congue augue ornare commodo. Sed sagittis neque ac.",
+	"name": "Nick",
+	"street": "13075 Wickshire Lane",
+	"city": "Tustin",
+	"state": "Californina",
+	"zip": 92782,
+	"phone-number": "714-743-1528"
+},
+{
+	"description": "Sed eget ornare elit, non hendrerit mi. Duis lorem mauris, bibendum vel pellentesque sed, volutpat ac odio. Vivamus ornare tincidunt dolor, at congue augue ornare commodo. Sed sagittis neque ac.",
+	"name": "Nick",
+	"street": "13075 Wickshire Lane",
+	"city": "Tustin",
+	"state": "Californina",
+	"zip": 92782,
 	"phone-number": "714-743-1528"
 }]
