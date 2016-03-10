@@ -6,24 +6,17 @@ myApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/contacts.html',
-			controller: 'ContactController'
-		})
-		.when('/ContactID' , {
-			templateUrl: 'views/single-contact.html',
-			controller: 'ContactController'
+			controller: 'AddContactController'
 		})
 		.when('/add', {
 			templateUrl: 'views/add.html',
 			controller: 'AddContactController'
 		})
-
-}]);
-
-myApp.controller('ContactController', ['$scope', '$http', function($scope, $http){
-
-	$http.get('js/data.json').success(function(data) {
-		$scope.contacts = data;
-	});
+		.when('/contact/:cId' , {
+			templateUrl: 'views/single-contact.html',
+			controller: 'ContactController'
+		})
+		
 
 }]);
 

@@ -1,16 +1,14 @@
-<section ng-controller="ContactController">
+<section>
 	<div class="content row">
 		<div class="col-sm-3 item"
 			ng-repeat="contact in contacts">
-			<div class="contact">
-				<h3>{{contact.name}}</h3>
-				<p>{{ contact.phone-number }}</p>
-				<p>{{contact.street}}</p>
-				<p>{{contact.city}}</p>
-				<p>{{contact.zip}}</p>
-				<p>{{contact.state}}</p>
-				<p>{{contact.description}}</p>
-			</div>
-		</div>
+			<a href="#/contact/{{contact.$id}}">
+				<div class="contact">
+					<h3>{{contact.firstname}}</h3>
+					<p>{{ contact.lastname }}</p>
+					<p>{{contact.address}}</p>
+					<p>{{contact.phone}}</p>
+				</div>
+			</a>	
 	</div>
 </section>

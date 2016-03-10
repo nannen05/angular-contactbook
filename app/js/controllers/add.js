@@ -2,6 +2,9 @@ myApp.controller('AddContactController', ['$scope', '$http', '$location', '$fire
 	function($scope, $http, $location, $firebaseObject, $routeParams, $firebaseArray, FIREBASE_URL){
 
 	var ref = new Firebase(FIREBASE_URL + '/contacts');
+	var contactList = $firebaseArray(ref);
+	console.log(contactList)
+	$scope.contacts = contactList;
 
 	$scope.lat = '';
 	$scope.lng = '';
