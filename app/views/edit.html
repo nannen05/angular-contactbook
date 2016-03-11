@@ -12,23 +12,30 @@
 						</div>
 						
 						<div class="form-group">
-							<input type="text" name="lastname" placeholder="{{editcontact.lastname}}" class="form-control"
-      						ng-model="updatecontact.lastname">
+							<input type="text" name="lastname" value="{{editcontact.lastname}}" class="form-control"
+      						ng-model-options="{ updateOn: 'blur' }"
+      						ng-model="editcontact.lastname">
 						</div>
 
 						<div class="form-group">
-							<input type="text" name="email" placeholder="{{editcontact.email}}" class="form-control"
-      						ng-model="updatecontact.email">
+							<input type="text" name="email" value="{{editcontact.email}}" class="form-control"
+      						ng-model-options="{ updateOn: 'blur' }"
+      						ng-model="editcontact.email">
 						</div>
 
 						<div class="form-group">
-							<input type="text" name="phone" placeholder="{{editcontact.phone}}" class="form-control"
-      						ng-model="updatecontact.phone">
+							<input type="text" name="phone" value="{{editcontact.phone}}" class="form-control"
+      						ng-model-options="{ updateOn: 'blur' }"
+      						ng-model="editcontact.phone">
 						</div>
-
-						<div class="form-group">
-							<input ng-model="updatecontact.chosenPlace" placeholder="{{editcontact.address}}" class="form-control"googleplace/>
-						</div>
+						
+						<div><a ng-click="hideAddress=true">Edit Address</a></div>
+						<div ng-show="hideAddress">
+							<div class="form-group">
+								<input 
+	      							ng-model="updateAddress.chosenPlace" class="form-control" googleplace/>
+							</div>
+						</div>	
 
 					<button type="submit" id="submit" class="btn">Update Contact</button>
 
