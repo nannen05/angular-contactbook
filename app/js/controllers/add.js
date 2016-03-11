@@ -30,7 +30,7 @@ myApp.controller('AddContactController', ['$scope', '$http', '$location', '$fire
  			};
 
  			contactInfo.$add(myData).then(function(){
- 				console.log("data added");
+ 				$location.path('/');
  			});
 
 		});

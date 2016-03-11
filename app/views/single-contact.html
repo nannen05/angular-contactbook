@@ -8,6 +8,14 @@
 					<p><a href="mailto:{{contact.email}}">{{contact.email}}</a></p>
 				</div>
 				<div id="map"></div>
+				<div class="edit text-center pull-left">
+					<br/>
+					<a ng-href="#/edit/{{contact.$id}}">Edit Contact</a>
+				</div>
+				<div class="remove text-center pull-right">
+					<br/>
+					<a href="#/remove/{{contact.$id}}">Remove Contact</a>
+				</div>
 		</div>
 	</div>	
 </section>

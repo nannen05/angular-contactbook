@@ -16,9 +16,16 @@ myApp.config(['$routeProvider', function($routeProvider){
 			templateUrl: 'views/single-contact.html',
 			controller: 'ContactController'
 		})
+		.when('/edit/:eId', {
+			templateUrl:'views/edit.html',
+			controller: 'EditContactController'
+		})
 		.when('/map' , {
 			templateUrl: 'views/map.html',
 			controller: 'MapController'
+		})
+		.otherwise({
+			redirectTo: '/'
 		})
 }]);
 
