@@ -14,6 +14,13 @@ myApp.controller('MapController', ['$scope', '$http', '$location', '$firebaseObj
 	      mapTypeId: google.maps.MapTypeId.ROADMAP
 	    });
 
+	    if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function (position) {
+             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+             map.setCenter(initialLocation);
+         });
+     	};
+
 	    var marker, i;
 
 	    var infowindow = [];
